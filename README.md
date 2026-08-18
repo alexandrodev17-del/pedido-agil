@@ -65,4 +65,4 @@ src/
 ├── model/
 ├── service/
 ├── repository/
-└── Main.java
+└── br.com.pedidoagil.Main.java
