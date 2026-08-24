@@ -4,12 +4,12 @@ public class Categoria {
 
     private Long id;
     private String nome;
-    private boolean ativa;
+    private boolean disponivel;
 
     public Categoria(Long id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.ativa = true;
+        this.disponivel = true;
     }
 
     public Long getId() {
@@ -21,19 +21,19 @@ public class Categoria {
     }
 
     public boolean isAtiva() {
-        return ativa;
+        return disponivel;
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void ativa(){
-        this.ativa = true;
+    public void disponibilizar() {
+        this.disponivel = true;
     }
 
-    public void desativa(){
-        this.ativa = false;
+    public void indisponibilizar() {
+        this.disponivel = false;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class Categoria {
         return "Categoria{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", ativa=" + ativa +
+                ", ativa=" + disponivel +
                 '}';
     }
 }
