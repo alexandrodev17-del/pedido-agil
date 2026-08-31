@@ -1,6 +1,8 @@
 package br.com.pedidoagil;
 
 import br.com.pedidoagil.model.Categoria;
+import br.com.pedidoagil.model.Cliente;
+import br.com.pedidoagil.model.ItemPedido;
 import br.com.pedidoagil.model.Produto;
 
 import java.math.BigDecimal;
@@ -47,8 +49,39 @@ public  class Main {
         produto.setPreco(new BigDecimal("24.90"));
         System.out.println(produto);
 
+        Cliente cliente = new Cliente(1L, "alexandro", "2199999999");{
+            System.out.println(cliente);
+
+            cliente.setNome("alexandro");
+            System.out.println(cliente);
+
+            cliente.setTelefone("2199999999");
+            System.out.println(cliente);
+        }
+
+        ItemPedido item = new ItemPedido(
+                produto,
+                2
+        );
+
+        System.out.println(item);
+
+        System.out.println(
+                "Subtotal: R$ " + item.calcularSubtotal()
+        );
+
+        item.alterarQuantidade(3);
+        System.out.println(item);
+
+        item.adicionarObservacao("Sem cebola");
+        System.out.println(item);
+
+        System.out.println(
+                "Novo subtotal: R$ " + item.calcularSubtotal()
+        );
+    }
+
     }
 
 
-}
 
