@@ -49,8 +49,8 @@ Em desenvolvimento.
 
 - [x] Criação do projeto
 - [x] Configuração do Git e GitHub
-- [ ] Modelagem das classes
-- [ ] Cadastro de produtos
+- [x] Modelagem das classes
+- [x] Cadastro de produtos
 - [ ] Criação de pedidos
 - [ ] Fila da cozinha
 - [ ] Testes automatizados
