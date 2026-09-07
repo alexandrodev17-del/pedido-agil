@@ -4,6 +4,9 @@ import br.com.pedidoagil.model.Categoria;
 import br.com.pedidoagil.model.Cliente;
 import br.com.pedidoagil.model.ItemPedido;
 import br.com.pedidoagil.model.Produto;
+import br.com.pedidoagil.enums.FormaPagamento;
+import br.com.pedidoagil.enums.TipoAtendimento;
+import br.com.pedidoagil.model.Pedido;
 
 import java.math.BigDecimal;
 
@@ -79,6 +82,57 @@ public  class Main {
         System.out.println(
                 "Novo subtotal: R$ " + item.calcularSubtotal()
         );
+
+
+        Pedido pedido = new Pedido(
+                1L,
+                cliente,
+                TipoAtendimento.BALCAO,
+                FormaPagamento.PIX
+        );
+
+        System.out.println("Pedido criado:");
+        System.out.println(pedido);
+
+        pedido.adicionarProduto(produto, 2);
+
+        System.out.println("Produto adicionado:");
+        System.out.println(pedido);
+
+        pedido.adicionarObservcao(
+                produto.getId(),
+                "Sem cebola"
+        );
+
+        pedido.alterarQuantidade(
+                produto.getId(),
+                3
+        );
+
+        System.out.println("Pedido alterado:");
+        System.out.println(pedido);
+
+        System.out.println(
+                "Total: R$ " + pedido.calcularTotal()
+        );
+
+        pedido.confirmar();
+        System.out.println("Pedido confirmado:");
+        System.out.println(pedido);
+
+        pedido.iniciarPreparo();
+        System.out.println("Pedido em preparo:");
+        System.out.println(pedido);
+
+        pedido.marcarComoPronto();
+        System.out.println("Pedido pronto:");
+        System.out.println(pedido);
+
+        pedido.finalizado();
+        System.out.println("Pedido finalizado:");
+        System.out.println(pedido);
+
+
     }
 
     }
