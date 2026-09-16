@@ -1,5 +1,6 @@
 package br.com.pedidoagil;
 
+import br.com.pedidoagil.menu.Menu;
 import br.com.pedidoagil.model.Categoria;
 import br.com.pedidoagil.model.Cliente;
 import br.com.pedidoagil.model.ItemPedido;
@@ -14,7 +15,7 @@ import java.math.BigDecimal;
 public  class Main {
     public static void main(String[] args) {
 
-        Categoria categoria = new Categoria(1L, "Hamburguer");
+        Categoria categoria = new Categoria(1L, "Hamburguer");//guarda variavel do objeto
 
         System.out.println(categoria);
 
@@ -131,6 +132,9 @@ public  class Main {
         pedido.finalizado();
         System.out.println("Pedido finalizado:");
         System.out.println(pedido);
+
+        Menu menu = new Menu();
+        menu.iniciar();
 
 
     }
